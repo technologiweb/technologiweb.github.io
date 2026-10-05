@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="تكنولوجي - تصميم وبرمجة مواقع ومتاجر وتطبيقات وحلول رقمية.">
+  <title>تكنولوجي | تصميم وبرمجة حلول رقمية</title>
+  <style>
+    :root{
+      --bg:#07111f; --card:#0d1b2d; --card2:#10243a; --text:#f7fbff;
+      --muted:#aab8c8; --line:rgba(255,255,255,.10);
+      --accent:#20d3a4; --accent2:#5ee7ff; --shadow:0 20px 60px rgba(0,0,0,.28);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;background:
+      radial-gradient(circle at 85% 10%,rgba(32,211,164,.12),transparent 28%),
+      radial-gradient(circle at 10% 30%,rgba(94,231,255,.08),transparent 25%),var(--bg);
+      color:var(--text);line-height:1.8}
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(1120px,92%);margin:auto}
+    nav{position:sticky;top:0;z-index:10;background:rgba(7,17,31,.78);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .navin{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:900;font-size:23px;letter-spacing:.3px}
+    .brand span{color:var(--accent)}
+    .links{display:flex;gap:24px;color:var(--muted);font-size:14px}
+    .links a:hover{color:#fff}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:14px;padding:12px 20px;font-weight:800;border:1px solid transparent;transition:.2s}
+    .btn-primary{background:var(--accent);color:#06130f;box-shadow:0 12px 35px rgba(32,211,164,.18)}
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-ghost{border-color:var(--line);background:rgba(255,255,255,.03)}
+    .hero{padding:92px 0 70px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
+    .eyebrow{display:inline-flex;border:1px solid rgba(32,211,164,.25);background:rgba(32,211,164,.07);color:#8ff4d8;padding:7px 12px;border-radius:999px;font-size:13px;font-weight:800}
+    h1{font-size:clamp(40px,6vw,70px);line-height:1.08;margin:20px 0}
+    h1 em{font-style:normal;color:var(--accent)}
+    .lead{font-size:20px;color:var(--muted);max-width:680px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .mock{background:linear-gradient(145deg,#112840,#091827);border:1px solid var(--line);border-radius:28px;padding:18px;box-shadow:var(--shadow);transform:rotate(1deg)}
+    .screen{border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#081522}
+    .screenbar{height:38px;display:flex;align-items:center;gap:6px;padding:0 12px;border-bottom:1px solid var(--line)}
+    .dot{width:8px;height:8px;border-radius:50%;background:#33485d}
+    .screenbody{padding:30px}
+    .mini-title{font-size:28px;font-weight:900}
+    .mini-line{height:9px;background:#1d344a;border-radius:20px;margin-top:12px}
+    .mini-line.short{width:55%}
+    .mini-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
+    .mini-card{height:90px;border:1px solid var(--line);border-radius:16px;background:#0d2134}
+    section{padding:78px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:28px}
+    h2{font-size:34px;margin:0}
+    .section-head p{margin:0;color:var(--muted);max-width:600px}
+    .services{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .card{background:rgba(13,27,45,.82);border:1px solid var(--line);border-radius:22px;padding:24px}
+    .icon{font-size:28px}
+    .card h3{margin:12px 0 5px}
+    .card p{color:var(--muted);font-size:14px;margin:0}
+    .portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project{overflow:hidden;border:1px solid var(--line);border-radius:24px;background:var(--card)}
+    .project-art{height:190px;padding:18px;background:linear-gradient(135deg,#102a40,#0a1726);display:flex;align-items:end}
+    .project-ui{width:100%;height:120px;border:1px solid var(--line);border-radius:16px;background:#091522;padding:12px}
+    .ui-top{height:12px;width:38%;border-radius:20px;background:#24435c}
+    .ui-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+    .ui-box{height:60px;border-radius:10px;background:#10283d;border:1px solid var(--line)}
+    .project-body{padding:20px}
+    .tag{font-size:12px;color:#8ff4d8}
+    .project h3{margin:5px 0}
+    .project p{margin:0;color:var(--muted);font-size:14px}
+    .note{margin-top:18px;color:#8fa2b6;font-size:13px}
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .step strong{display:block;color:var(--accent);font-size:14px}
+    .contact{display:grid;grid-template-columns:1fr .8fr;gap:20px}
+    .contact-box{background:linear-gradient(145deg,#10263b,#0b1929);border:1px solid var(--line);border-radius:26px;padding:34px}
+    .contact-box p{color:var(--muted)}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}
+    .small{font-size:12px;color:#71869a}
+    @media(max-width:850px){
+      .links{display:none}
+      .hero-grid,.contact{grid-template-columns:1fr}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .portfolio{grid-template-columns:1fr}
+      .process{grid-template-columns:1fr 1fr}
+      .hero{padding-top:58px}
+    }
+    @media(max-width:520px){
+      .services,.process{grid-template-columns:1fr}
+      h2{font-size:28px}
+      .lead{font-size:17px}
+      .navin{height:64px}
+      .hero{padding-bottom:35px}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap navin">
+      <a class="brand" href="#top">تكنولوجي<span>.</span></a>
+      <div class="links">
+        <a href="#services">الخدمات</a>
+        <a href="#work">النماذج</a>
+        <a href="#process">طريقة العمل</a>
+        <a href="#contact">تواصل</a>
+      </div>
+      <a class="btn btn-primary" href="#contact">اطلب عرض سعر</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">تصميم • برمجة • حلول رقمية</span>
+          <h1>نبني لك <em>حضورك الرقمي</em> باحترافية.</h1>
+          <p class="lead">مواقع شركات، متاجر إلكترونية، صفحات هبوط، تطبيقات وأنظمة مخصصة — بتصميم حديث وتجربة استخدام مناسبة لعملائك.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#contact">ابدأ مشروعك</a>
+            <a class="btn btn-ghost" href="#work">شاهد النماذج</a>
+          </div>
+        </div>
+        <div class="mock" aria-label="نموذج واجهة موقع">
+          <div class="screen">
+            <div class="screenbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="screenbody">
+              <div class="mini-title">موقع احترافي لنشاطك</div>
+              <div class="mini-line short"></div>
+              <div class="mini-line"></div>
+              <div class="mini-cards"><div class="mini-card"></div><div class="mini-card"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div><h2>ماذا نقدم؟</h2></div>
+          <p>حلول عملية تبدأ من احتياجك، بدون تعقيد أو إضافات لا تحتاجها.</p>
+        </div>
+        <div class="services">
+          <article class="card"><div class="icon">🌐</div><h3>مواقع إلكترونية</h3><p>مواقع شركات ومؤسسات ومشاريع متوافقة مع الجوال والكمبيوتر.</p></article>
+          <article class="card"><div class="icon">🛒</div><h3>متاجر إلكترونية</h3><p>واجهات بيع وعرض منتجات مع تجربة مستخدم واضحة.</p></article>
+          <article class="card"><div class="icon">📱</div><h3>تطبيقات</h3><p>تصميم وبرمجة تطبيقات حسب فكرة المشروع واحتياجه.</p></article>
+          <article class="card"><div class="icon">⚙️</div><h3>أنظمة مخصصة</h3><p>لوحات تحكم وأنظمة داخلية وأدوات رقمية للأعمال.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <div><h2>نماذج تجريبية</h2></div>
+          <p>نماذج توضيحية لأساليب التصميم والبرمجة. ليست مواقع عملاء، ويمكن تخصيص الفكرة بالكامل حسب مشروعك.</p>
+        </div>
+        <div class="portfolio">
+          <article class="project">
+            <div class="project-art"><div class="project-ui"><div class="ui-top"></div><div class="ui-grid"><div class="ui-box"></div><div class="ui-box"></div><div class="ui-box"></div></div></div></div>
+            <div class="project-body"><span class="tag">نموذج تجريبي</span><h3>موقع شركة</h3><p>واجهة تعريفية للخدمات والأعمال وطرق التواصل.</p></div>
+          </article>
+          <article class="project">
+            <div class="project-art"><div class="project-ui"><div class="ui-top"></div><div class="ui-grid"><div class="ui-box"></div><div class="ui-box"></div><div class="ui-box"></div></div></div></div>
+            <div class="project-body"><span class="tag">نموذج تجريبي</span><h3>متجر إلكتروني</h3><p>عرض منتجات وتصنيفات وتجربة شراء مرتبة.</p></div>
+          </article>
+          <article class="project">
+            <div class="project-art"><div class="project-ui"><div class="ui-top"></div><div class="ui-grid"><div class="ui-box"></div><div class="ui-box"></div><div class="ui-box"></div></div></div></div>
+            <div class="project-body"><span class="tag">نموذج تجريبي</span><h3>صفحة هبوط</h3><p>صفحة مركزة على تحويل الزائر إلى عميل أو استفسار.</p></div>
+          </article>
+        </div>
+        <p class="note">ملاحظة: هذه النماذج مصممة للعرض فقط، ولا ننسبها إلى عملاء حقيقيين.</p>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="wrap">
+        <div class="section-head"><div><h2>طريقة العمل</h2></div><p>واضحة من أول رسالة حتى التسليم.</p></div>
+        <div class="process">
+          <div class="card step"><strong>01 — فهم الطلب</strong><h3>نحدد احتياجك</h3><p>نشاطك، الصفحات المطلوبة والهدف من الموقع.</p></div>
+          <div class="card step"><strong>02 — التصور والسعر</strong><h3>عرض واضح</h3><p>نحدد النطاق والسعر والمدة قبل البدء.</p></div>
+          <div class="card step"><strong>03 — التنفيذ</strong><h3>نبني المشروع</h3><p>تصميم وبرمجة ومراجعة حسب المتفق عليه.</p></div>
+          <div class="card step"><strong>04 — التسليم</strong><h3>جاهز للاستخدام</h3><p>تسليم مرتب وشرح للعميل حسب المشروع.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap contact">
+        <div class="contact-box">
+          <h2>عندك فكرة؟ خلنا نحولها إلى موقع.</h2>
+          <p>أرسل نوع نشاطك وما تحتاجه، وسنحدد لك الحل المناسب والتكلفة والمدة قبل البدء.</p>
+          <!-- استبدل الرابط أدناه برابط واتساب الخاص بك -->
+          <a class="btn btn-primary" href="#" onclick="alert('ضع رابط واتساب الخاص بك في ملف index.html مكان الرابط # ثم أعد رفع الموقع.');return false;">تواصل عبر واتساب</a>
+        </div>
+        <div class="contact-box">
+          <h3>تكنولوجي</h3>
+          <p>تصميم وبرمجة حلول رقمية للأعمال والمشاريع.</p>
+          <p class="small">الأسعار ومدة التنفيذ تختلف حسب متطلبات المشروع.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 تكنولوجي — جميع الحقوق محفوظة.</div>
+  </footer>
+</body>
+</html>
