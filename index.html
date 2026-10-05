@@ -41,6 +41,9 @@ nav{
   border:1px solid var(--line);background:var(--surface);color:var(--text);
   border-radius:12px;height:42px;padding:0 13px;cursor:pointer;font:inherit
 }
+.lang-switch{display:flex;align-items:center;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:3px;direction:ltr}
+.lang{border:0;background:transparent;color:var(--muted);border-radius:9px;height:34px;padding:0 9px;cursor:pointer;font:inherit;font-size:12px;font-weight:800}
+.lang.active{background:var(--accent);color:#06130f}
 .navbtn{background:var(--accent);color:#06130f;border:0;font-weight:850}
 .hero{padding:95px 0 75px;overflow:hidden}
 .heroGrid{display:grid;grid-template-columns:1.08fr .92fr;gap:60px;align-items:center}
@@ -85,7 +88,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
   .models{grid-template-columns:1fr}.hero{padding-top:65px}.preview{height:240px}
 }
 @media(max-width:500px){
-  .navbtn{display:none}.navin{height:68px}.points{grid-template-columns:1fr}
+  .navbtn{display:none}.navin{height:68px}.lang{padding:0 7px}.points{grid-template-columns:1fr}
   h1{letter-spacing:-2px}.ctaBox{padding:32px 20px}.ctaBox h2{font-size:31px}
 }
 </style>
@@ -96,13 +99,17 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
   <div class="wrap navin">
     <a class="brand" href="#">تكنولوجي<span>.</span></a>
     <div class="links">
-      <a href="#models">النماذج</a>
-      <a href="#about">عن تكنولوجي</a>
-      <a href="#contact">تواصل</a>
+      <a id="modelsLink" href="#models">النماذج</a>
+      <a id="aboutLink" href="#about">عن تكنولوجي</a>
+      <a id="contactLink" href="#contact">تواصل</a>
     </div>
     <div class="actions">
+      <div class="lang-switch" role="group" aria-label="اختيار اللغة">
+        <button class="lang active" id="arBtn" type="button">العربية</button>
+        <button class="lang" id="enBtn" type="button">English</button>
+      </div>
       <button class="theme" id="themeBtn" aria-label="تغيير المظهر">☀️</button>
-      <a class="navbtn" href="https://wa.me/966500551964" target="_blank" rel="noopener">اطلب عرض سعر</a>
+      <a class="navbtn" id="quoteBtn" href="https://wa.me/966500551964" target="_blank" rel="noopener">اطلب عرض سعر</a>
     </div>
   </div>
 </nav>
@@ -110,28 +117,25 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 <header class="hero">
   <div class="wrap heroGrid">
     <div>
-      <div class="kicker"><i></i> تصميم • برمجة • حلول رقمية</div>
-      <h1>نبني لك حضورك الرقمي <span class="gradient">باحترافية.</span></h1>
-      <p>
-        نصمم ونبرمج مواقع الشركات والمتاجر والصفحات التعريفية والحلول الرقمية
-        بأسلوب يركز على تجربة المستخدم، الأداء، والهوية الخاصة بكل مشروع.
-      </p>
+      <div class="kicker"><i></i> <span id="kickerText">تصميم • برمجة • حلول رقمية</span></div>
+      <h1><span id="heroTitle">نبني لك حضورك الرقمي <span class="gradient">باحترافية.</span></span></h1>
+      <p id="heroDesc">نصمم ونبرمج مواقع الشركات والمتاجر والصفحات التعريفية والحلول الرقمية بأسلوب يركز على تجربة المستخدم، الأداء، والهوية الخاصة بكل مشروع.</p>
       <div class="heroBtns">
-        <a class="primary" href="https://wa.me/966500551964" target="_blank" rel="noopener">ابدأ مشروعك</a>
-        <a class="secondary" href="#models">شاهد النماذج ↓</a>
+        <a class="primary" id="startBtn" href="https://wa.me/966500551964" target="_blank" rel="noopener">ابدأ مشروعك</a>
+        <a class="secondary" id="modelsBtn" href="#models">شاهد النماذج ↓</a>
       </div>
     </div>
     <div class="showcase">
       <div class="browser">
         <div class="browserbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
         <div class="mock">
-          <div class="mockbrand">Digital Experience</div>
+          <div class="mockbrand"><span data-ar="تجربة رقمية" data-en="Digital Experience">تجربة رقمية</span></div>
           <div class="mockline"></div><div class="mockline small"></div>
           <div class="mockcards">
-            <div class="mockcard"><b>01</b><span>Web Design</span></div>
-            <div class="mockcard"><b>02</b><span>E-Commerce</span></div>
-            <div class="mockcard"><b>03</b><span>Landing Pages</span></div>
-            <div class="mockcard"><b>04</b><span>Custom Systems</span></div>
+            <div class="mockcard"><b>01</b><span data-ar="تصميم مواقع" data-en="Web Design">تصميم مواقع</span></div>
+            <div class="mockcard"><b>02</b><span data-ar="متاجر إلكترونية" data-en="E-Commerce">متاجر إلكترونية</span></div>
+            <div class="mockcard"><b>03</b><span data-ar="صفحات هبوط" data-en="Landing Pages">صفحات هبوط</span></div>
+            <div class="mockcard"><b>04</b><span data-ar="أنظمة مخصصة" data-en="Custom Systems">أنظمة مخصصة</span></div>
           </div>
         </div>
       </div>
@@ -142,11 +146,8 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 <section id="models">
   <div class="wrap">
     <div class="sectionHead">
-      <h2>نماذج من أساليب تصميمنا</h2>
-      <p>
-        هذه النماذج توضح بعض أساليبنا في التصميم وتجربة المستخدم.
-        المشروع الفعلي يتم تصميمه حسب ذوق العميل واحتياجه، ونساعده في اختيار الحل الأنسب.
-      </p>
+      <h2 id="modelsTitle">نماذج من أساليب تصميمنا</h2>
+      <p id="modelsDesc">هذه النماذج توضح بعض أساليبنا في التصميم وتجربة المستخدم. المشروع الفعلي يتم تصميمه حسب ذوق العميل واحتياجه، ونساعده في اختيار الحل الأنسب.</p>
     </div>
 
     <div class="models">
@@ -155,8 +156,8 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
         <div class="modelbody">
           <span class="tag">مواقع الشركات</span>
           <h3>موقع شركة أفق+</h3>
-          <p>نموذج احترافي يوضح أسلوبًا حديثًا لموقع شركة وخدمات أعمال.</p>
-          <a class="view" href="company-pro-demo.html">تصفح النموذج ↗</a>
+          <p id="companyDesc">نموذج احترافي يوضح أسلوبًا حديثًا لموقع شركة وخدمات أعمال.</p>
+          <a class="view" id="companyView" href="company-pro-demo.html">تصفح النموذج ↗</a>
         </div>
       </article>
 
@@ -165,8 +166,8 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
         <div class="modelbody">
           <span class="tag">المتاجر الإلكترونية</span>
           <h3>متجر LUMA</h3>
-          <p>نموذج متجر متكامل بمنتجات وفئات وعربة تسوق وتجربة تصفح حقيقية.</p>
-          <a class="view" href="store-pro-demo.html">تصفح النموذج ↗</a>
+          <p id="storeDesc">نموذج متجر متكامل بمنتجات وفئات وعربة تسوق وتجربة تصفح حقيقية.</p>
+          <a class="view" id="storeView" href="store-pro-demo.html">تصفح النموذج ↗</a>
         </div>
       </article>
 
@@ -175,8 +176,8 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
         <div class="modelbody">
           <span class="tag">صفحات الهبوط</span>
           <h3>صفحة PULSE</h3>
-          <p>نموذج Landing Page لمنتج رقمي مع مزايا وأسعار وأسئلة شائعة.</p>
-          <a class="view" href="landing-pro-demo.html">تصفح النموذج ↗</a>
+          <p id="landingDesc">نموذج صفحة هبوط لمنتج رقمي مع مزايا وأسعار وأسئلة شائعة.</p>
+          <a class="view" id="landingView" href="landing-pro-demo.html">تصفح النموذج ↗</a>
         </div>
       </article>
     </div>
@@ -187,22 +188,17 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
   <div class="wrap">
     <div class="aboutGrid">
       <div class="info">
-        <h3>تصميمك يبدأ من فكرتك.</h3>
-        <p>
-          النماذج الموجودة هنا ليست قوالب مفروضة على العملاء. هي مجرد أمثلة فقط.
-        </p>
-        <p>
-          عند بدء أي مشروع، نسمع فكرتك أولًا، ثم نساعدك في تحويلها إلى تجربة
-          رقمية تناسب نشاطك وذوقك والجمهور المستهدف.
-        </p>
+        <h3 id="ideaTitle">تصميمك يبدأ من فكرتك.</h3>
+        <p id="ideaDesc">النماذج الموجودة هنا ليست قوالب مفروضة على العملاء. هي مجرد أمثلة فقط.</p>
+        <p id="ideaDesc2">عند بدء أي مشروع، نسمع فكرتك أولًا، ثم نساعدك في تحويلها إلى تجربة رقمية تناسب نشاطك وذوقك والجمهور المستهدف.</p>
       </div>
       <div class="info">
-        <h3>ماذا نقدم؟</h3>
+        <h3 id="offersTitle">ماذا نقدم؟</h3>
         <div class="points">
-          <div class="point"><b>01</b>مواقع شركات</div>
-          <div class="point"><b>02</b>متاجر إلكترونية</div>
-          <div class="point"><b>03</b>صفحات هبوط</div>
-          <div class="point"><b>04</b>أنظمة وحلول مخصصة</div>
+          <div class="point"><b>01</b><span>مواقع شركات</span></div>
+          <div class="point"><b>02</b><span>متاجر إلكترونية</span></div>
+          <div class="point"><b>03</b><span>صفحات هبوط</span></div>
+          <div class="point"><b>04</b><span>أنظمة وحلول مخصصة</span></div>
         </div>
       </div>
     </div>
@@ -212,9 +208,9 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 <section id="contact">
   <div class="wrap">
     <div class="ctaBox">
-      <h2>عندك فكرة؟ خلنا نبنيها.</h2>
-      <p>أرسل لنا فكرتك واحتياجك، ونساعدك في اختيار التصميم والحل المناسب لمشروعك.</p>
-      <a class="primary" href="https://wa.me/966500551964" target="_blank" rel="noopener">تواصل عبر واتساب</a>
+      <h2 id="ctaTitle">عندك فكرة؟ خلنا نبنيها.</h2>
+      <p id="ctaDesc">أرسل لنا فكرتك واحتياجك، ونساعدك في اختيار التصميم والحل المناسب لمشروعك.</p>
+      <a class="primary" id="whatsappBtn" href="https://wa.me/966500551964" target="_blank" rel="noopener">تواصل عبر واتساب</a>
     </div>
   </div>
 </section>
@@ -223,6 +219,67 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
   <div class="wrap">تكنولوجي. — تصميم • برمجة • حلول رقمية © 2026</div>
 </footer>
 
+<script>
+const translations={
+  ar:{
+    dir:'rtl',modelsLink:'النماذج',aboutLink:'عن تكنولوجي',contactLink:'تواصل',
+    quoteBtn:'اطلب عرض سعر',kickerText:'تصميم • برمجة • حلول رقمية',
+    heroTitle:'نبني لك حضورك الرقمي <span class="gradient">باحترافية.</span>',
+    heroDesc:'نصمم ونبرمج مواقع الشركات والمتاجر والصفحات التعريفية والحلول الرقمية بأسلوب يركز على تجربة المستخدم، الأداء، والهوية الخاصة بكل مشروع.',
+    startBtn:'ابدأ مشروعك',modelsBtn:'شاهد النماذج ↓',
+    mockBrand:'تجربة رقمية',mock1:'تصميم مواقع',mock2:'متاجر إلكترونية',mock3:'صفحات هبوط',mock4:'أنظمة مخصصة',
+    modelsTitle:'نماذج من أساليب تصميمنا',
+    modelsDesc:'هذه النماذج توضح بعض أساليبنا في التصميم وتجربة المستخدم. المشروع الفعلي يتم تصميمه حسب ذوق العميل واحتياجه، ونساعده في اختيار الحل الأنسب.',
+    companyDesc:'نموذج احترافي يوضح أسلوبًا حديثًا لموقع شركة وخدمات أعمال.',
+    storeDesc:'نموذج متجر متكامل بمنتجات وفئات وعربة تسوق وتجربة تصفح حقيقية.',
+    landingDesc:'نموذج صفحة هبوط لمنتج رقمي مع مزايا وأسعار وأسئلة شائعة.',
+    view:'تصفح النموذج ↗',ideaTitle:'تصميمك يبدأ من فكرتك.',
+    ideaDesc:'النماذج الموجودة هنا ليست قوالب مفروضة على العملاء. هي مجرد أمثلة فقط.',
+    ideaDesc2:'عند بدء أي مشروع، نسمع فكرتك أولًا، ثم نساعدك في تحويلها إلى تجربة رقمية تناسب نشاطك وذوقك والجمهور المستهدف.',
+    offersTitle:'ماذا نقدم؟',p1:'مواقع شركات',p2:'متاجر إلكترونية',p3:'صفحات هبوط',p4:'أنظمة وحلول مخصصة',
+    ctaTitle:'عندك فكرة؟ خلنا نبنيها.',ctaDesc:'أرسل لنا فكرتك واحتياجك، ونساعدك في اختيار التصميم والحل المناسب لمشروعك.',
+    whatsappBtn:'تواصل عبر واتساب'
+  },
+  en:{
+    dir:'ltr',modelsLink:'Models',aboutLink:'About Technologi',contactLink:'Contact',
+    quoteBtn:'Request a Quote',kickerText:'Design • Development • Digital Solutions',
+    heroTitle:'We build your digital presence <span class="gradient">professionally.</span>',
+    heroDesc:'We design and develop company websites, online stores, landing pages, and digital solutions focused on user experience, performance, and each project’s unique identity.',
+    startBtn:'Start Your Project',modelsBtn:'View Models ↓',
+    mockBrand:'Digital Experience',mock1:'Web Design',mock2:'E-Commerce',mock3:'Landing Pages',mock4:'Custom Systems',
+    modelsTitle:'Examples of Our Design Styles',
+    modelsDesc:'These examples showcase some of our design and user-experience styles. The actual project is designed around the client’s preferences and needs, with our guidance along the way.',
+    companyDesc:'A modern example of a professional company website and business services.',
+    storeDesc:'A complete store example with products, categories, cart interaction, and a realistic browsing experience.',
+    landingDesc:'A landing page example for a digital product with features, pricing, and FAQs.',
+    view:'Explore Model ↗',ideaTitle:'Your design starts with your idea.',
+    ideaDesc:'The examples here are not templates imposed on clients. They are simply examples.',
+    ideaDesc2:'When starting a project, we listen to your idea first, then help turn it into a digital experience that fits your business, taste, and target audience.',
+    offersTitle:'What We Offer',p1:'Company Websites',p2:'Online Stores',p3:'Landing Pages',p4:'Custom Systems & Solutions',
+    ctaTitle:'Have an idea? Let’s build it.',ctaDesc:'Send us your idea and requirements, and we’ll help you choose the right design and solution for your project.',
+    whatsappBtn:'Contact Us on WhatsApp'
+  }
+};
+function setLanguage(lang){
+  const t=translations[lang];
+  document.documentElement.lang=lang;
+  document.documentElement.dir=t.dir;
+  for(const id of ['modelsLink','aboutLink','contactLink','quoteBtn','kickerText','heroTitle','heroDesc','startBtn','modelsBtn','modelsTitle','modelsDesc','companyDesc','storeDesc','landingDesc','ideaTitle','ideaDesc','ideaDesc2','offersTitle','ctaTitle','ctaDesc','whatsappBtn']){
+    const el=document.getElementById(id); if(el) el.innerHTML=t[id];
+  }
+  const mockMap={mockBrand:'.mockbrand span',mock1:'.mockcard:nth-child(1) span',mock2:'.mockcard:nth-child(2) span',mock3:'.mockcard:nth-child(3) span',mock4:'.mockcard:nth-child(4) span'};
+  for(const [key,sel] of Object.entries(mockMap)){const el=document.querySelector(sel);if(el)el.textContent=t[key]}
+  const points=document.querySelectorAll('.point span');
+  if(points.length===4){points[0].textContent=t.p1;points[1].textContent=t.p2;points[2].textContent=t.p3;points[3].textContent=t.p4}
+  document.querySelectorAll('.view').forEach(el=>el.textContent=t.view);
+  document.getElementById('arBtn').classList.toggle('active',lang==='ar');
+  document.getElementById('enBtn').classList.toggle('active',lang==='en');
+  localStorage.setItem('technologi-lang',lang);
+}
+document.getElementById('arBtn').addEventListener('click',()=>setLanguage('ar'));
+document.getElementById('enBtn').addEventListener('click',()=>setLanguage('en'));
+setLanguage(localStorage.getItem('technologi-lang')||'ar');
+</script>
 <script>
 const root=document.documentElement;
 const btn=document.getElementById('themeBtn');
