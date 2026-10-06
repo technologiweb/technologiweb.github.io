@@ -34,7 +34,7 @@ nav{
   backdrop-filter:blur(18px);border-bottom:1px solid var(--line)
 }
 .navin{height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.brand{font-size:24px;font-weight:950;letter-spacing:-1px}.brand span{color:var(--accent)}
+.brand{font-size:22px;font-weight:950;letter-spacing:-.6px}.brand-en{color:var(--text)}.brand-sep{color:var(--muted);margin:0 3px}.brand-ar{color:var(--accent)}.brand-dot{color:var(--accent)}
 .links{display:flex;gap:25px;color:var(--muted);font-size:14px}.links a:hover{color:var(--text)}
 .actions{display:flex;align-items:center;gap:9px}
 .theme,.navbtn{
@@ -88,7 +88,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
   .models{grid-template-columns:1fr}.hero{padding-top:65px}.preview{height:240px}
 }
 @media(max-width:500px){
-  .navbtn{display:none}.navin{height:68px}.lang{padding:0 7px}.points{grid-template-columns:1fr}
+  .navbtn{display:none}.navin{height:68px}.lang{padding:0 7px}.brand{font-size:18px}.points{grid-template-columns:1fr}
   h1{letter-spacing:-2px}.ctaBox{padding:32px 20px}.ctaBox h2{font-size:31px}
 }
 </style>
@@ -97,7 +97,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 
 <nav>
   <div class="wrap navin">
-    <a class="brand" href="#">تكنولوجي<span>.</span></a>
+    <a class="brand" href="#"><span class="brand-en">Technology</span> <span class="brand-sep">|</span> <span class="brand-ar">تكنولوجي</span><span class="brand-dot">.</span></a>
     <div class="links">
       <a id="modelsLink" href="#models">النماذج</a>
       <a id="aboutLink" href="#about">عن تكنولوجي</a>
@@ -152,30 +152,30 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 
     <div class="models">
       <article class="model">
-        <div class="preview"><img src="company-pro-demo.png" alt="نموذج تصميم موقع شركة"></div>
+        <div class="preview"><img id="companyPreview" src="company-pro-demo.png" alt="نموذج تصميم موقع شركة"></div>
         <div class="modelbody">
-          <span class="tag">مواقع الشركات</span>
-          <h3>موقع شركة أفق+</h3>
+          <span class="tag" id="companyTag">مواقع الشركات</span>
+          <h3 id="companyTitle">موقع شركة أفق+</h3>
           <p id="companyDesc">نموذج احترافي يوضح أسلوبًا حديثًا لموقع شركة وخدمات أعمال.</p>
           <a class="view" id="companyView" href="company-pro-demo.html">تصفح النموذج ↗</a>
         </div>
       </article>
 
       <article class="model">
-        <div class="preview"><img src="store-pro-demo.png" alt="نموذج تصميم متجر إلكتروني"></div>
+        <div class="preview"><img id="storePreview" src="store-pro-demo.png" alt="نموذج تصميم متجر إلكتروني"></div>
         <div class="modelbody">
-          <span class="tag">المتاجر الإلكترونية</span>
-          <h3>متجر LUMA</h3>
+          <span class="tag" id="storeTag">المتاجر الإلكترونية</span>
+          <h3 id="storeTitle">متجر LUMA</h3>
           <p id="storeDesc">نموذج متجر متكامل بمنتجات وفئات وعربة تسوق وتجربة تصفح حقيقية.</p>
           <a class="view" id="storeView" href="store-pro-demo.html">تصفح النموذج ↗</a>
         </div>
       </article>
 
       <article class="model">
-        <div class="preview"><img src="landing-pro-demo.png" alt="نموذج تصميم صفحة هبوط"></div>
+        <div class="preview"><img id="landingPreview" src="landing-pro-demo.png" alt="نموذج تصميم صفحة هبوط"></div>
         <div class="modelbody">
-          <span class="tag">صفحات الهبوط</span>
-          <h3>صفحة PULSE</h3>
+          <span class="tag" id="landingTag">صفحات الهبوط</span>
+          <h3 id="landingTitle">صفحة PULSE</h3>
           <p id="landingDesc">نموذج صفحة هبوط لمنتج رقمي مع مزايا وأسعار وأسئلة شائعة.</p>
           <a class="view" id="landingView" href="landing-pro-demo.html">تصفح النموذج ↗</a>
         </div>
@@ -230,13 +230,17 @@ const translations={
     mockBrand:'تجربة رقمية',mock1:'تصميم مواقع',mock2:'متاجر إلكترونية',mock3:'صفحات هبوط',mock4:'أنظمة مخصصة',
     modelsTitle:'نماذج من أساليب تصميمنا',
     modelsDesc:'هذه النماذج توضح بعض أساليبنا في التصميم وتجربة المستخدم. المشروع الفعلي يتم تصميمه حسب ذوق العميل واحتياجه، ونساعده في اختيار الحل الأنسب.',
+    companyTag:'مواقع الشركات',companyTitle:'موقع شركة أفق+',
     companyDesc:'نموذج احترافي يوضح أسلوبًا حديثًا لموقع شركة وخدمات أعمال.',
+    storeTag:'المتاجر الإلكترونية',storeTitle:'متجر LUMA',
     storeDesc:'نموذج متجر متكامل بمنتجات وفئات وعربة تسوق وتجربة تصفح حقيقية.',
+    landingTag:'صفحات الهبوط',landingTitle:'صفحة PULSE',
     landingDesc:'نموذج صفحة هبوط لمنتج رقمي مع مزايا وأسعار وأسئلة شائعة.',
-    view:'تصفح النموذج ↗',ideaTitle:'تصميمك يبدأ من فكرتك.',
+    view:'تصفح النموذج ↗',
+    ideaTitle:'تصميمك يبدأ من فكرتك.',
     ideaDesc:'النماذج الموجودة هنا ليست قوالب مفروضة على العملاء. هي مجرد أمثلة فقط.',
     ideaDesc2:'عند بدء أي مشروع، نسمع فكرتك أولًا، ثم نساعدك في تحويلها إلى تجربة رقمية تناسب نشاطك وذوقك والجمهور المستهدف.',
-    offersTitle:'ماذا نقدم؟',p1:'مواقع شركات',p2:'متاجر إلكترونية',p3:'صفحات هبوط',p4:'أنظمة وحلول مخصصة',
+    offersTitle:'ماذا نقدم?',p1:'مواقع شركات',p2:'متاجر إلكترونية',p3:'صفحات هبوط',p4:'أنظمة وحلول مخصصة',
     ctaTitle:'عندك فكرة؟ خلنا نبنيها.',ctaDesc:'أرسل لنا فكرتك واحتياجك، ونساعدك في اختيار التصميم والحل المناسب لمشروعك.',
     whatsappBtn:'تواصل عبر واتساب'
   },
@@ -249,10 +253,14 @@ const translations={
     mockBrand:'Digital Experience',mock1:'Web Design',mock2:'E-Commerce',mock3:'Landing Pages',mock4:'Custom Systems',
     modelsTitle:'Examples of Our Design Styles',
     modelsDesc:'These examples showcase some of our design and user-experience styles. The actual project is designed around the client’s preferences and needs, with our guidance along the way.',
+    companyTag:'Company Websites',companyTitle:'Afaq+ Company Website',
     companyDesc:'A modern example of a professional company website and business services.',
+    storeTag:'E-Commerce',storeTitle:'LUMA Store',
     storeDesc:'A complete store example with products, categories, cart interaction, and a realistic browsing experience.',
+    landingTag:'Landing Pages',landingTitle:'PULSE Landing Page',
     landingDesc:'A landing page example for a digital product with features, pricing, and FAQs.',
-    view:'Explore Model ↗',ideaTitle:'Your design starts with your idea.',
+    view:'Explore Model ↗',
+    ideaTitle:'Your design starts with your idea.',
     ideaDesc:'The examples here are not templates imposed on clients. They are simply examples.',
     ideaDesc2:'When starting a project, we listen to your idea first, then help turn it into a digital experience that fits your business, taste, and target audience.',
     offersTitle:'What We Offer',p1:'Company Websites',p2:'Online Stores',p3:'Landing Pages',p4:'Custom Systems & Solutions',
@@ -264,15 +272,50 @@ function setLanguage(lang){
   const t=translations[lang];
   document.documentElement.lang=lang;
   document.documentElement.dir=t.dir;
-  for(const id of ['modelsLink','aboutLink','contactLink','quoteBtn','kickerText','heroTitle','heroDesc','startBtn','modelsBtn','modelsTitle','modelsDesc','companyDesc','storeDesc','landingDesc','ideaTitle','ideaDesc','ideaDesc2','offersTitle','ctaTitle','ctaDesc','whatsappBtn']){
-    const el=document.getElementById(id); if(el) el.innerHTML=t[id];
+
+  const ids=[
+    'modelsLink','aboutLink','contactLink','quoteBtn','kickerText','heroTitle','heroDesc',
+    'startBtn','modelsBtn','modelsTitle','modelsDesc','companyTag','companyTitle','companyDesc',
+    'storeTag','storeTitle','storeDesc','landingTag','landingTitle','landingDesc',
+    'ideaTitle','ideaDesc','ideaDesc2','offersTitle','ctaTitle','ctaDesc','whatsappBtn'
+  ];
+  for(const id of ids){
+    const el=document.getElementById(id);
+    if(el) el.innerHTML=t[id];
   }
-  const mockMap={mockBrand:'.mockbrand span',mock1:'.mockcard:nth-child(1) span',mock2:'.mockcard:nth-child(2) span',mock3:'.mockcard:nth-child(3) span',mock4:'.mockcard:nth-child(4) span'};
-  for(const [key,sel] of Object.entries(mockMap)){const el=document.querySelector(sel);if(el)el.textContent=t[key]}
+
+  const mockMap={
+    mockBrand:'.mockbrand span',
+    mock1:'.mockcard:nth-child(1) span',
+    mock2:'.mockcard:nth-child(2) span',
+    mock3:'.mockcard:nth-child(3) span',
+    mock4:'.mockcard:nth-child(4) span'
+  };
+  for(const [key,sel] of Object.entries(mockMap)){
+    const el=document.querySelector(sel);
+    if(el) el.textContent=t[key];
+  }
+
   const points=document.querySelectorAll('.point span');
-  if(points.length===4){points[0].textContent=t.p1;points[1].textContent=t.p2;points[2].textContent=t.p3;points[3].textContent=t.p4}
+  if(points.length===4){
+    points[0].textContent=t.p1;points[1].textContent=t.p2;
+    points[2].textContent=t.p3;points[3].textContent=t.p4;
+  }
+
   document.querySelectorAll('.view').forEach(el=>el.textContent=t.view);
+
+  const companyPreview=document.getElementById('companyPreview');
+  const storePreview=document.getElementById('storePreview');
+  const landingPreview=document.getElementById('landingPreview');
+  if(companyPreview) companyPreview.src=lang==='en'?'company-pro-demo.en.png':'company-pro-demo.png';
+  if(storePreview) storePreview.src=lang==='en'?'store-pro-demo.en.png':'store-pro-demo.png';
+  if(landingPreview) landingPreview.src=lang==='en'?'landing-pro-demo.en.png':'landing-pro-demo.png';
+
   document.getElementById('arBtn').classList.toggle('active',lang==='ar');
+  document.getElementById('enBtn').classList.toggle('active',lang==='en');
+  localStorage.setItem('technologi-lang',lang);
+}
+document.getElementById('arBtn').classList.toggle('active',lang==='ar');
   document.getElementById('enBtn').classList.toggle('active',lang==='en');
   localStorage.setItem('technologi-lang',lang);
 }
