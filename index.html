@@ -68,7 +68,7 @@ h1{font-size:clamp(43px,6.2vw,76px);line-height:1.08;letter-spacing:-3px;margin:
 .mockcard b{font-size:24px;color:var(--accent)}.mockcard span{display:block;color:var(--muted);font-size:11px}
 section{padding:78px 0}
 .sectionHead{text-align:center;margin-bottom:35px}.sectionHead h2{font-size:38px;margin:0 0 8px}.sectionHead p{color:var(--muted);max-width:650px;margin:auto}
-.models{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.models{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .model{
   background:var(--surface);border:1px solid var(--line);border-radius:23px;
   overflow:hidden;box-shadow:var(--shadow);transition:transform .2s,border-color .2s
@@ -181,6 +181,16 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
           <a class="view" id="landingView" href="landing-pro-demo.html">تصفح النموذج ↗</a>
         </div>
       </article>
+
+      <article class="model">
+        <div class="preview"><img id="menuPreview" src="menu-pro-demo.png" alt="نموذج منيو إلكتروني لمطعم"></div>
+        <div class="modelbody">
+          <span class="tag" id="menuTag">منيو المطاعم</span>
+          <h3 id="menuTitle">منيو EMBER</h3>
+          <p id="menuDesc">نموذج منيو إلكتروني احترافي لمطعم عصري، مصمم للجوال وسهل التصفح.</p>
+          <a class="view" id="menuView" href="menu-pro-demo.html">تصفح النموذج ↗</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -251,6 +261,7 @@ const translations={
     storeDesc:'نموذج متجر متكامل بمنتجات وفئات وعربة تسوق وتجربة تصفح حقيقية.',
     landingTag:'صفحات الهبوط',landingTitle:'صفحة PULSE',
     landingDesc:'نموذج صفحة هبوط لمنتج رقمي مع مزايا وأسعار وأسئلة شائعة.',
+    menuTag:'منيو المطاعم',menuTitle:'منيو EMBER',menuDesc:'نموذج منيو إلكتروني احترافي لمطعم عصري، مصمم للجوال وسهل التصفح.',
     view:'تصفح النموذج ↗',
     ideaTitle:'تصميمك يبدأ من فكرتك.',
     ideaDesc:'النماذج الموجودة هنا ليست قوالب مفروضة على العملاء. هي مجرد أمثلة فقط.',
@@ -275,6 +286,7 @@ const translations={
     storeDesc:'A complete store example with products, categories, cart interaction, and a realistic browsing experience.',
     landingTag:'Landing Pages',landingTitle:'PULSE Landing Page',
     landingDesc:'A landing page example for a digital product with features, pricing, and FAQs.',
+    menuTag:'Restaurant Menus',menuTitle:'EMBER Digital Menu',menuDesc:'A polished digital menu example for a modern restaurant, designed for mobile and easy browsing.',
     view:'Explore Model ↗',
     ideaTitle:'Your design starts with your idea.',
     ideaDesc:'The examples here are not templates imposed on clients. They are simply examples.',
@@ -292,7 +304,7 @@ function setLanguage(lang){
 
   const ids=[
     'modelsLink','pricingLink','aboutLink','contactLink','quoteBtn','kickerText','heroTitle','heroDesc',
-    'startBtn','modelsBtn','modelsTitle','modelsDesc','companyTag','companyTitle','companyDesc',
+    'startBtn','modelsBtn','modelsTitle','modelsDesc','companyTag','companyTitle','companyDesc','menuTag','menuTitle','menuDesc',
     'storeTag','storeTitle','storeDesc','landingTag','landingTitle','landingDesc',
     'ideaTitle','ideaDesc','ideaDesc2','offersTitle','ctaTitle','ctaDesc','whatsappBtn','pricingTeaserTag','pricingTeaserTitle','pricingTeaserDesc','pricingTeaserBtn','homePricingBtn'
   ];
@@ -327,6 +339,8 @@ function setLanguage(lang){
   if(companyPreview) companyPreview.src=lang==='en'?'company-pro-demo.en.png':'company-pro-demo.png';
   if(storePreview) storePreview.src=lang==='en'?'store-pro-demo.en.png':'store-pro-demo.png';
   if(landingPreview) landingPreview.src=lang==='en'?'landing-pro-demo.en.png':'landing-pro-demo.png';
+  const menuPreview=document.getElementById('menuPreview');
+  if(menuPreview) menuPreview.src=lang==='en'?'menu-pro-demo.en.png':'menu-pro-demo.png';
 
   document.getElementById('arBtn').classList.toggle('active',lang==='ar');
   document.getElementById('enBtn').classList.toggle('active',lang==='en');
