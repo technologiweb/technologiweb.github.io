@@ -82,13 +82,16 @@ section{padding:78px 0}
 .info{background:var(--surface);border:1px solid var(--line);border-radius:23px;padding:30px}.info h3{font-size:25px;margin-top:0}.info p{color:var(--muted)}
 .points{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.point{padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--surface2)}.point b{display:block;color:var(--accent);margin-bottom:4px}
 .ctaBox{border:1px solid var(--line);background:linear-gradient(120deg,var(--surface2),var(--surface));border-radius:28px;padding:48px;text-align:center}.ctaBox h2{font-size:39px;margin:10px 0 10px}.pricingTeaserBox .tag{display:inline-block}.ctaBox p{color:var(--muted);margin-bottom:24px}
+.processGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.step{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px}.step b{display:block;color:var(--accent);font-size:13px;margin-bottom:8px}.step h3{margin:0 0 6px;font-size:19px}.step p{margin:0;color:var(--muted);font-size:14px}
+.faq{display:grid;gap:12px;max-width:900px;margin:auto}.faqItem{background:var(--surface);border:1px solid var(--line);border-radius:17px;padding:20px 22px}.faqItem h3{margin:0 0 7px;font-size:17px}.faqItem p{margin:0;color:var(--muted);font-size:14px}
+
 footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
 @media(max-width:850px){
   .links{display:none}.heroGrid,.aboutGrid{grid-template-columns:1fr}
-  .models{grid-template-columns:1fr}.hero{padding-top:65px}.preview{height:240px}
+  .models{grid-template-columns:1fr}.processGrid{grid-template-columns:1fr 1fr}.hero{padding-top:65px}.preview{height:240px}
 }
 @media(max-width:500px){
-  .navbtn{display:none}.navin{height:68px}.lang{padding:0 7px}.brand{font-size:18px}.points{grid-template-columns:1fr}
+  .navbtn{display:none}.navin{height:68px}.lang{padding:0 7px}.brand{font-size:18px}.points,.processGrid{grid-template-columns:1fr}
   h1{letter-spacing:-2px}.ctaBox{padding:32px 20px}.ctaBox h2{font-size:31px}
 }
 </style>
@@ -220,9 +223,41 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
           <div class="point"><b>01</b><span>مواقع شركات</span></div>
           <div class="point"><b>02</b><span>متاجر إلكترونية</span></div>
           <div class="point"><b>03</b><span>صفحات هبوط</span></div>
-          <div class="point"><b>04</b><span>أنظمة وحلول مخصصة</span></div>
+          <div class="point"><b>04</b><span>منيو مطاعم محترف</span></div>
+          <div class="point"><b>05</b><span>أنظمة وحلول مخصصة</span></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="sectionHead">
+      <h2 id="processTitle">كيف نعمل؟</h2>
+      <p id="processDesc">خطوات واضحة من اختيار الباقة إلى إطلاق مشروعك.</p>
+    </div>
+    <div class="processGrid">
+      <div class="step"><b>01</b><h3 id="step1Title">اختر الباقة</h3><p id="step1Desc">اختر الخدمة الأقرب لاحتياج مشروعك من الباقات المتاحة.</p></div>
+      <div class="step"><b>02</b><h3 id="step2Title">تحدث معنا</h3><p id="step2Desc">أرسل فكرتك والمتطلبات والإضافات التي تحتاجها عبر واتساب.</p></div>
+      <div class="step"><b>03</b><h3 id="step3Title">نبدأ التنفيذ</h3><p id="step3Desc">نصمم ونطور المشروع بما يناسب نشاطك وهويتك واحتياجك.</p></div>
+      <div class="step"><b>04</b><h3 id="step4Title">التسليم والإطلاق</h3><p id="step4Desc">نراجع المشروع معك ثم نجهزه للتسليم والإطلاق.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sectionHead">
+      <h2 id="faqTitle">الأسئلة الشائعة</h2>
+      <p id="faqDesc">أجوبة سريعة عن أكثر الأسئلة التي قد تهمك قبل بدء المشروع.</p>
+    </div>
+    <div class="faq">
+      <div class="faqItem"><h3 id="faq1Q">هل الأسعار نهائية؟</h3><p id="faq1A">الأسعار المعروضة هي أسعار بداية، وقد يختلف السعر النهائي حسب متطلبات المشروع والإضافات المطلوبة.</p></div>
+      <div class="faqItem"><h3 id="faq2Q">هل أستطيع طلب تعديلات وإضافات؟</h3><p id="faq2A">نعم، يمكن إضافة خدمات وتعديلات حسب احتياج المشروع، ويتم توضيحها للعميل عند اختيار الباقة والتواصل معنا.</p></div>
+      <div class="faqItem"><h3 id="faq3Q">هل المواقع تعمل على الجوال والكمبيوتر؟</h3><p id="faq3A">نعم، يتم تصميم المشاريع بشكل متجاوب ليتناسب مع الجوال والكمبيوتر والأجهزة المختلفة.</p></div>
+      <div class="faqItem"><h3 id="faq4Q">هل توفرون الدفع الإلكتروني والتكاملات؟</h3><p id="faq4A">نعم، حسب نوع المشروع ومتطلباته، ويمكن إضافة الدفع الإلكتروني والتكاملات والأنظمة المخصصة كخدمات إضافية.</p></div>
+      <div class="faqItem"><h3 id="faq5Q">كم يستغرق تنفيذ المشروع؟</h3><p id="faq5A">تختلف المدة حسب نوع المشروع وحجمه والمتطلبات والإضافات المطلوبة، ويتم تحديد المدة المتوقعة بعد معرفة التفاصيل.</p></div>
     </div>
   </div>
 </section>
@@ -266,7 +301,9 @@ const translations={
     ideaTitle:'تصميمك يبدأ من فكرتك.',
     ideaDesc:'النماذج الموجودة هنا ليست قوالب مفروضة على العملاء. هي مجرد أمثلة فقط.',
     ideaDesc2:'عند بدء أي مشروع، نسمع فكرتك أولًا، ثم نساعدك في تحويلها إلى تجربة رقمية تناسب نشاطك وذوقك والجمهور المستهدف.',
-    offersTitle:'ماذا نقدم?',p1:'مواقع شركات',p2:'متاجر إلكترونية',p3:'صفحات هبوط',p4:'أنظمة وحلول مخصصة',
+    offersTitle:'ماذا نقدم؟',p1:'مواقع شركات',p2:'متاجر إلكترونية',p3:'صفحات هبوط',p4:'منيو مطاعم محترف',p5:'أنظمة وحلول مخصصة',
+    processTitle:'كيف نعمل؟',processDesc:'خطوات واضحة من اختيار الباقة إلى إطلاق مشروعك.',step1Title:'اختر الباقة',step1Desc:'اختر الخدمة الأقرب لاحتياج مشروعك من الباقات المتاحة.',step2Title:'تحدث معنا',step2Desc:'أرسل فكرتك والمتطلبات والإضافات التي تحتاجها عبر واتساب.',step3Title:'نبدأ التنفيذ',step3Desc:'نصمم ونطور المشروع بما يناسب نشاطك وهويتك واحتياجك.',step4Title:'التسليم والإطلاق',step4Desc:'نراجع المشروع معك ثم نجهزه للتسليم والإطلاق.',
+    faqTitle:'الأسئلة الشائعة',faqDesc:'أجوبة سريعة عن أكثر الأسئلة التي قد تهمك قبل بدء المشروع.',faq1Q:'هل الأسعار نهائية؟',faq1A:'الأسعار المعروضة هي أسعار بداية، وقد يختلف السعر النهائي حسب متطلبات المشروع والإضافات المطلوبة.',faq2Q:'هل أستطيع طلب تعديلات وإضافات؟',faq2A:'نعم، يمكن إضافة خدمات وتعديلات حسب احتياج المشروع، ويتم توضيحها للعميل عند اختيار الباقة والتواصل معنا.',faq3Q:'هل المواقع تعمل على الجوال والكمبيوتر؟',faq3A:'نعم، يتم تصميم المشاريع بشكل متجاوب ليتناسب مع الجوال والكمبيوتر والأجهزة المختلفة.',faq4Q:'هل توفرون الدفع الإلكتروني والتكاملات؟',faq4A:'نعم، حسب نوع المشروع ومتطلباته، ويمكن إضافة الدفع الإلكتروني والتكاملات والأنظمة المخصصة كخدمات إضافية.',faq5Q:'كم يستغرق تنفيذ المشروع؟',faq5A:'تختلف المدة حسب نوع المشروع وحجمه والمتطلبات والإضافات المطلوبة، ويتم تحديد المدة المتوقعة بعد معرفة التفاصيل.',
     ctaTitle:'عندك فكرة؟ خلنا نبنيها.',ctaDesc:'أرسل لنا فكرتك واحتياجك، ونساعدك في اختيار التصميم والحل المناسب لمشروعك.',
     whatsappBtn:'تواصل عبر واتساب',
     pricingTeaserTag:'الباقات والأسعار',homePricingBtn:'الباقات والأسعار ↗',pricingTeaserTitle:'ابدأ من الباقة المناسبة لك.',pricingTeaserDesc:'شوف الباقات والأسعار الابتدائية، وبعدها نحدد التفاصيل والإضافات المناسبة لمشروعك.',pricingTeaserBtn:'استعرض الباقات والأسعار ↗'
@@ -291,7 +328,9 @@ const translations={
     ideaTitle:'Your design starts with your idea.',
     ideaDesc:'The examples here are not templates imposed on clients. They are simply examples.',
     ideaDesc2:'When starting a project, we listen to your idea first, then help turn it into a digital experience that fits your business, taste, and target audience.',
-    offersTitle:'What We Offer',p1:'Company Websites',p2:'Online Stores',p3:'Landing Pages',p4:'Custom Systems & Solutions',
+    offersTitle:'What We Offer',p1:'Company Websites',p2:'Online Stores',p3:'Landing Pages',p4:'Professional Restaurant Menus',p5:'Custom Systems & Solutions',
+    processTitle:'How We Work',processDesc:'Clear steps from choosing your package to launching your project.',step1Title:'Choose a Package',step1Desc:'Choose the service that best fits your project from the available packages.',step2Title:'Talk to Us',step2Desc:'Send us your idea, requirements, and any extras you need through WhatsApp.',step3Title:'We Start Building',step3Desc:'We design and develop the project around your business, identity, and requirements.',step4Title:'Delivery & Launch',step4Desc:'We review the project with you, then prepare it for delivery and launch.',
+    faqTitle:'Frequently Asked Questions',faqDesc:'Quick answers to common questions before starting your project.',faq1Q:'Are the prices final?',faq1A:'The listed prices are starting prices. The final price may vary depending on project requirements and requested extras.',faq2Q:'Can I request changes and extras?',faq2A:'Yes. Additional services and customizations can be added based on your project needs and will be discussed when you choose a package and contact us.',faq3Q:'Do the websites work on mobile and desktop?',faq3A:'Yes. Projects are designed responsively to work across mobile, desktop, and different screen sizes.',faq4Q:'Do you offer online payments and integrations?',faq4A:'Yes, depending on the project and its requirements. Online payments, integrations, and custom systems can be added as extras.',faq5Q:'How long does a project take?',faq5A:'Timing depends on the project type, size, requirements, and requested extras. We provide an estimated timeline after reviewing the details.',
     ctaTitle:'Have an idea? Let’s build it.',ctaDesc:'Send us your idea and requirements, and we’ll help you choose the right design and solution for your project.',
     whatsappBtn:'Contact Us on WhatsApp',
     pricingTeaserTag:'Packages & Pricing',homePricingBtn:'Packages & Pricing ↗',pricingTeaserTitle:'Start with the right package for you.',pricingTeaserDesc:'See our starting prices, then we can define the details and extras that fit your project.',pricingTeaserBtn:'View Packages & Pricing ↗'
@@ -306,7 +345,7 @@ function setLanguage(lang){
     'modelsLink','pricingLink','aboutLink','contactLink','quoteBtn','kickerText','heroTitle','heroDesc',
     'startBtn','modelsBtn','modelsTitle','modelsDesc','companyTag','companyTitle','companyDesc','menuTag','menuTitle','menuDesc',
     'storeTag','storeTitle','storeDesc','landingTag','landingTitle','landingDesc',
-    'ideaTitle','ideaDesc','ideaDesc2','offersTitle','ctaTitle','ctaDesc','whatsappBtn','pricingTeaserTag','pricingTeaserTitle','pricingTeaserDesc','pricingTeaserBtn','homePricingBtn'
+    'ideaTitle','ideaDesc','ideaDesc2','offersTitle','processTitle','processDesc','step1Title','step1Desc','step2Title','step2Desc','step3Title','step3Desc','step4Title','step4Desc','faqTitle','faqDesc','faq1Q','faq1A','faq2Q','faq2A','faq3Q','faq3A','faq4Q','faq4A','faq5Q','faq5A','ctaTitle','ctaDesc','whatsappBtn','pricingTeaserTag','pricingTeaserTitle','pricingTeaserDesc','pricingTeaserBtn','homePricingBtn'
   ];
   for(const id of ids){
     const el=document.getElementById(id);
@@ -326,9 +365,9 @@ function setLanguage(lang){
   }
 
   const points=document.querySelectorAll('.point span');
-  if(points.length===4){
+  if(points.length===5){
     points[0].textContent=t.p1;points[1].textContent=t.p2;
-    points[2].textContent=t.p3;points[3].textContent=t.p4;
+    points[2].textContent=t.p3;points[3].textContent=t.p4;points[4].textContent=t.p5;
   }
 
   document.querySelectorAll('.view').forEach(el=>el.textContent=t.view);
