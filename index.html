@@ -315,10 +315,6 @@ function setLanguage(lang){
   document.getElementById('enBtn').classList.toggle('active',lang==='en');
   localStorage.setItem('technologi-lang',lang);
 }
-document.getElementById('arBtn').classList.toggle('active',lang==='ar');
-  document.getElementById('enBtn').classList.toggle('active',lang==='en');
-  localStorage.setItem('technologi-lang',lang);
-}
 document.getElementById('arBtn').addEventListener('click',()=>setLanguage('ar'));
 document.getElementById('enBtn').addEventListener('click',()=>setLanguage('en'));
 setLanguage(localStorage.getItem('technologi-lang')||'ar');
