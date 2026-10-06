@@ -81,7 +81,7 @@ section{padding:78px 0}
 .aboutGrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .info{background:var(--surface);border:1px solid var(--line);border-radius:23px;padding:30px}.info h3{font-size:25px;margin-top:0}.info p{color:var(--muted)}
 .points{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.point{padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--surface2)}.point b{display:block;color:var(--accent);margin-bottom:4px}
-.ctaBox{border:1px solid var(--line);background:linear-gradient(120deg,var(--surface2),var(--surface));border-radius:28px;padding:48px;text-align:center}.ctaBox h2{font-size:39px;margin:0 0 10px}.ctaBox p{color:var(--muted);margin-bottom:24px}
+.ctaBox{border:1px solid var(--line);background:linear-gradient(120deg,var(--surface2),var(--surface));border-radius:28px;padding:48px;text-align:center}.ctaBox h2{font-size:39px;margin:10px 0 10px}.pricingTeaserBox .tag{display:inline-block}.ctaBox p{color:var(--muted);margin-bottom:24px}
 footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
 @media(max-width:850px){
   .links{display:none}.heroGrid,.aboutGrid{grid-template-columns:1fr}
@@ -100,6 +100,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
     <a class="brand" href="#"><span class="brand-en">Technology</span> <span class="brand-sep">|</span> <span class="brand-ar">تكنولوجي</span><span class="brand-dot">.</span></a>
     <div class="links">
       <a id="modelsLink" href="#models">النماذج</a>
+      <a id="pricingLink" href="pricing.html">الباقات والأسعار</a>
       <a id="aboutLink" href="#about">عن تكنولوجي</a>
       <a id="contactLink" href="#contact">تواصل</a>
     </div>
@@ -184,6 +185,17 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
   </div>
 </section>
 
+<section id="pricingTeaser">
+  <div class="wrap">
+    <div class="ctaBox pricingTeaserBox">
+      <span class="tag" id="pricingTeaserTag">الباقات والأسعار</span>
+      <h2 id="pricingTeaserTitle">ابدأ من الباقة المناسبة لك.</h2>
+      <p id="pricingTeaserDesc">شوف الباقات والأسعار الابتدائية، وبعدها نحدد التفاصيل والإضافات المناسبة لمشروعك.</p>
+      <a class="primary" id="pricingTeaserBtn" href="pricing.html">استعرض الباقات والأسعار ↗</a>
+    </div>
+  </div>
+</section>
+
 <section id="about">
   <div class="wrap">
     <div class="aboutGrid">
@@ -210,7 +222,10 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
     <div class="ctaBox">
       <h2 id="ctaTitle">عندك فكرة؟ خلنا نبنيها.</h2>
       <p id="ctaDesc">أرسل لنا فكرتك واحتياجك، ونساعدك في اختيار التصميم والحل المناسب لمشروعك.</p>
-      <a class="primary" id="whatsappBtn" href="https://wa.me/966500551964" target="_blank" rel="noopener">تواصل عبر واتساب</a>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <a class="primary" id="whatsappBtn" href="https://wa.me/966500551964" target="_blank" rel="noopener">تواصل عبر واتساب</a>
+        <a class="secondary" id="homePricingBtn" href="pricing.html">الباقات والأسعار ↗</a>
+      </div>
     </div>
   </div>
 </section>
@@ -222,7 +237,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 <script>
 const translations={
   ar:{
-    dir:'rtl',modelsLink:'النماذج',aboutLink:'عن تكنولوجي',contactLink:'تواصل',
+    dir:'rtl',modelsLink:'النماذج',pricingLink:'الباقات والأسعار',aboutLink:'عن تكنولوجي',contactLink:'تواصل',
     quoteBtn:'اطلب عرض سعر',kickerText:'تصميم • برمجة • حلول رقمية',
     heroTitle:'نبني لك حضورك الرقمي <span class="gradient">باحترافية.</span>',
     heroDesc:'نصمم ونبرمج مواقع الشركات والمتاجر والصفحات التعريفية والحلول الرقمية بأسلوب يركز على تجربة المستخدم، الأداء، والهوية الخاصة بكل مشروع.',
@@ -242,10 +257,11 @@ const translations={
     ideaDesc2:'عند بدء أي مشروع، نسمع فكرتك أولًا، ثم نساعدك في تحويلها إلى تجربة رقمية تناسب نشاطك وذوقك والجمهور المستهدف.',
     offersTitle:'ماذا نقدم?',p1:'مواقع شركات',p2:'متاجر إلكترونية',p3:'صفحات هبوط',p4:'أنظمة وحلول مخصصة',
     ctaTitle:'عندك فكرة؟ خلنا نبنيها.',ctaDesc:'أرسل لنا فكرتك واحتياجك، ونساعدك في اختيار التصميم والحل المناسب لمشروعك.',
-    whatsappBtn:'تواصل عبر واتساب'
+    whatsappBtn:'تواصل عبر واتساب',
+    pricingTeaserTag:'الباقات والأسعار',homePricingBtn:'الباقات والأسعار ↗',pricingTeaserTitle:'ابدأ من الباقة المناسبة لك.',pricingTeaserDesc:'شوف الباقات والأسعار الابتدائية، وبعدها نحدد التفاصيل والإضافات المناسبة لمشروعك.',pricingTeaserBtn:'استعرض الباقات والأسعار ↗'
   },
   en:{
-    dir:'ltr',modelsLink:'Models',aboutLink:'About Technologi',contactLink:'Contact',
+    dir:'ltr',modelsLink:'Models',pricingLink:'Pricing',aboutLink:'About Technologi',contactLink:'Contact',
     quoteBtn:'Request a Quote',kickerText:'Design • Development • Digital Solutions',
     heroTitle:'We build your digital presence <span class="gradient">professionally.</span>',
     heroDesc:'We design and develop company websites, online stores, landing pages, and digital solutions focused on user experience, performance, and each project’s unique identity.',
@@ -265,7 +281,8 @@ const translations={
     ideaDesc2:'When starting a project, we listen to your idea first, then help turn it into a digital experience that fits your business, taste, and target audience.',
     offersTitle:'What We Offer',p1:'Company Websites',p2:'Online Stores',p3:'Landing Pages',p4:'Custom Systems & Solutions',
     ctaTitle:'Have an idea? Let’s build it.',ctaDesc:'Send us your idea and requirements, and we’ll help you choose the right design and solution for your project.',
-    whatsappBtn:'Contact Us on WhatsApp'
+    whatsappBtn:'Contact Us on WhatsApp',
+    pricingTeaserTag:'Packages & Pricing',homePricingBtn:'Packages & Pricing ↗',pricingTeaserTitle:'Start with the right package for you.',pricingTeaserDesc:'See our starting prices, then we can define the details and extras that fit your project.',pricingTeaserBtn:'View Packages & Pricing ↗'
   }
 };
 function setLanguage(lang){
@@ -274,10 +291,10 @@ function setLanguage(lang){
   document.documentElement.dir=t.dir;
 
   const ids=[
-    'modelsLink','aboutLink','contactLink','quoteBtn','kickerText','heroTitle','heroDesc',
+    'modelsLink','pricingLink','aboutLink','contactLink','quoteBtn','kickerText','heroTitle','heroDesc',
     'startBtn','modelsBtn','modelsTitle','modelsDesc','companyTag','companyTitle','companyDesc',
     'storeTag','storeTitle','storeDesc','landingTag','landingTitle','landingDesc',
-    'ideaTitle','ideaDesc','ideaDesc2','offersTitle','ctaTitle','ctaDesc','whatsappBtn'
+    'ideaTitle','ideaDesc','ideaDesc2','offersTitle','ctaTitle','ctaDesc','whatsappBtn','pricingTeaserTag','pricingTeaserTitle','pricingTeaserDesc','pricingTeaserBtn','homePricingBtn'
   ];
   for(const id of ids){
     const el=document.getElementById(id);
